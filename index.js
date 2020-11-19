@@ -44,6 +44,7 @@ mongoose
     })
     .then(() => {
         console.log ('database connected')
-        app.listen(3000, console.log('Server started at http://localhost:3000'));
+        const port=process.env.PORT||'5000'
+        app.listen(port, console.log(`Server started at on${port}`));
     })
     .catch(err => console.log(err));
