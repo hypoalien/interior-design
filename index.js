@@ -36,10 +36,10 @@ app.post('/contact',(req,res)=>{
           res.status(400).send("err");
         });
 })
-
+pass= process.env.pass
 mongoose
 
-    .connect('mongodb+srv://supraja:5XcFCkh0Rg3r8ZZO@cluster0.0m987.mongodb.net/cluster0?retryWrites=true&w=majority', {
+    .connect(`mongodb+srv://supraja:${pass}@cluster0.0m987.mongodb.net/cluster0?retryWrites=true&w=majority`, {
         useNewUrlParser: true,useUnifiedTopology: true
     })
     .then(() => {
